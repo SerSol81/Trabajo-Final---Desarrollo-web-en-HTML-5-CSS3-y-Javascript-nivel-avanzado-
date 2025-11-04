@@ -1,0 +1,380 @@
+
+
+/* Parte del Codigo comun a todas las paginas */ 
+
+html, body { 
+    font-family: "Raleway", sans-serif; 
+    justify-items: center; 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    width: 100%; 
+    height: 100%; 
+} 
+
+/* header y nav*/ 
+
+#svg-logo {
+    padding-left: 30px;
+    padding-top: 5px;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: bajarSvg 1.5s ease-out forwards;
+}
+
+@keyframes bajarSvg {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-fondo { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-size: cover; 
+    height: 100vh; 
+    width: 100%; 
+    font-size: 50px; 
+    text-shadow: 2px 2px #808080, 6px 6px black; 
+} 
+
+#titulo { 
+    font-size: 66px;
+    font-weight: 400; 
+    text-shadow: #808080 2px 2px, black 6px 6px; 
+    color: #FFFFFF; 
+    position: relative;
+    z-index: 2;
+}
+
+.barra-nav { 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    height: 100px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: transparent;
+    transition: background-color 1.5s ease, color 1.5s ease;
+    z-index: 3;
+}
+
+ul { 
+    display: flex; 
+    justify-content: flex-end; 
+    gap: 40px; 
+    list-style: none; 
+    margin-right: 30px; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+} 
+    
+.nav-link { 
+    font-size: 24px; 
+    font-weight: 500; 
+    color: #FFFFFF; 
+    text-decoration: none; 
+    text-shadow: 1px 1px gray, 2px 3px black; 
+    transition: color 0.3s ease; 
+} 
+    
+.nav-scroll { 
+    background-color: #FFFFFF; 
+} 
+    
+.nav-scroll .nav-link { 
+    color: #2F3645; 
+    text-shadow: 1px 1px white, 2px 3px gray; 
+}
+     
+.nav-link:hover { 
+    text-shadow: none !important; /*este palabra clave la descubri con IA porque no podia hacer funcionar el hover*/ 
+} 
+    
+/*footer*/ 
+    
+footer { 
+    width: 100%; 
+    height: 240px; 
+    background-color: #2F3645; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    color: white; 
+    margin-top: 150px; 
+} 
+    
+.div-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+} 
+    
+.logo-img { 
+    height: 80px; 
+    margin-right: 90px; 
+    margin-left: 90px; 
+} 
+    
+.titulo-footer { 
+    font-size: 14px; 
+    text-align: center; 
+    font-weight: bold; 
+} 
+    
+.texto-footer { 
+    padding-right: 90px; 
+    font-size: 16px; 
+} 
+
+
+/* Referente a la pagina de Index y juguemos */
+
+
+.titulo-index { 
+    color: #2f3645;
+    font-size: 50px; 
+    font-weight: 500; 
+    text-align: center; 
+    text-shadow:white 1px 1px, gray 2px 2px; 
+    padding: 100px 40px;
+} 
+
+
+/* Referente a la pagina de Index */ 
+
+
+.fondo-index { 
+    background-image: url(./Imagenes/fondo.jpg); 
+    background-attachment: fixed; 
+} 
+
+.seccion-tarjeta { 
+    display: flex; 
+    justify-content:space-between; 
+    padding-bottom: 50px; gap: 120px; 
+}
+
+.img-tarjeta { 
+    width: 450px; 
+    height: 312px; 
+} 
+
+.tarjeta{ 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+} 
+
+.ptarjeta { 
+    padding-bottom: 20px; 
+    padding-top: 40px; 
+    width: 410px; 
+} 
+
+.boton-index { 
+    width: 150px; 
+    background-color: #2F3645; 
+    padding: 10px; 
+    color: #FFFFFF; 
+    border: 0; 
+    cursor: pointer; 
+}
+
+.boton-index:active { 
+    transform: translateY(2px) translateX(2px); 
+} 
+
+.tarjeta { 
+    opacity: 0; 
+    transform: translateX(0); 
+    transition: transform 3s ease-out, opacity 3s ease-out; 
+} 
+
+.tarjeta.izquierda { 
+    transform: translateX(-150px); 
+}
+
+.tarjeta.derecha { 
+    transform: translateX(150px); 
+}
+
+.tarjeta.visible { 
+    opacity: 1; 
+    transform: translateX(0); 
+} 
+
+
+/* Referente a la pagina de Historia */ 
+
+
+.fondo-historia { 
+    position: relative;
+    background-image: url(./Imagenes/historia-programacion.jpg); 
+    height: 400px; 
+    margin-bottom: 30px;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed; 
+    z-index: 0;
+} 
+
+.fondo-historia::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(47, 54, 69, 0.70);
+  z-index: 1;
+}
+
+.historia { 
+    justify-content: center; 
+}
+
+.p-tarjeta-historia {
+    font-size: 18px;
+    text-align: justify;
+}
+
+#titulo-tarjeta{ 
+    text-align: center; 
+    font-size: 50px; 
+    font-weight: 500; 
+    text-shadow: white 1px 1px, gray 2px 2px; 
+} 
+
+.img-tarjeta-historia {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.tarjeta-izquierda-img,
+.tarjeta-derecha-img {
+    flex: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-izquierda-img img,
+.tarjeta-derecha-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.tarjeta-derecha-txt,
+.tarjeta-izquierda-txt {
+    flex: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#seccion-tarjeta{ 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    padding: 80px 50px; 
+    gap: 20px; 
+    perspective: 800px; 
+    perspective-origin: top; 
+} 
+
+.tarjeta-izquierda-img { 
+    opacity: 0; 
+    transform: translateX(-150px) translateZ(150px); 
+    transition: transform 2s ease-out, opacity 2s ease-out; 
+}
+
+.tarjeta-derecha-txt { 
+    opacity: 0; 
+    transform: translateX(150px) translateZ(-150px) rotateY(-36deg); 
+    transition: transform 3s ease-out, opacity 3s ease-out; 
+} 
+
+.tarjeta-izquierda-txt { 
+    opacity: 0; 
+    transform: translateX(-150px) translateZ(-150px) rotateY(36deg); 
+    transition: transform 3s ease-out, opacity 3s ease-out; 
+}
+.tarjeta-derecha-img { 
+    opacity: 0; 
+    transform: translateX(150px) translateZ(150px); 
+    transition: transform 2s ease-out, opacity 2s ease-out; 
+} 
+
+.visible { 
+    opacity: 1; 
+    transform: translateX(0); 
+}
+.video-contenedor { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    width: 800px; 
+    border: 3px solid black; 
+}
+
+#mivideo { 
+    width: 800px; 
+    display: block;
+}
+
+.contenedor-barra { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #2F3645; 
+    color: white; 
+    width: 800px; 
+    height: 60px; 
+    box-sizing: border-box; 
+}
+
+.boton-historia { 
+    width: 80px; 
+    background-color: #FFFFFF; 
+    box-shadow: 2px 2px #808080; 
+    border: 1px solid #808080; 
+    padding: 10px 15px; 
+    text-decoration: none; 
+    margin-left: 10px; 
+    font-weight: 300; 
+}
+
+.botonera button:active { 
+    box-shadow: none; 
+    transform: translateY(2px) translateX(2px); 
+}
+
+/* Referente a la pagina de juguemos */
+
+
+.fondo-juguemos{ 
+    position: relative;
+    background-image: url(./Imagenes/img2.jpg); 
+    height: 400px; 
+    margin-bottom: 30px; 
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed; 
+    z-index: 0;
+} 
+
+.fondo-juguemos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(47, 54, 69, 0.70);
+  z-index: 1;
+}
+
+
