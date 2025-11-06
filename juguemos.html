@@ -38,16 +38,29 @@
   <h1 id="titulo">JUGUEMOS UN POCO</h1> 
 </header> 
 <main>
-  <h2 class="titulo-index">Armemos el rompecabezas y veamos que imagen es...</h2>
-
-
-
+  <h2 class="titulo-index">Armemos el rompecabezas y veamos qué imagen es...</h2>
+<section class="rompecabezas">
+  <div id="superior">
+    <img class="img-rc" id="img1" src="./imagenes/rompe2.png" alt="primera imagen del rompecabezas">
+    <div class="cajas">
+      <div class="boxes" id="caja1"><p>Arrastre y suelte la imagen aquí</p></div>
+      <div class="boxes" id="caja2"><p>Arrastre y suelte la imagen aquí</p></div>
+      <div class="boxes" id="caja3"><p>Arrastre y suelte la imagen aquí</p></div>
+    </div>
+    <img class="img-rc" id="img2" src="./imagenes/Rompe1.png" alt="segunda imagen del rompecabezas">
+  </div>
+  <div id="inferior">
+    <img class="img-rc" id="img3" src="./imagenes/Rompe3.png" alt="tercera imagen del rompecabezas">
+  </div>
+  <p class="mensaje"></p>
+  <button class="boton-reiniciar" onclick="reiniciar()">REINICIAR</button>
+</section>
 </main>
   <footer> 
     <div class="div-footer"> 
-      <img src="Imagenes/logo.png" alt="Logo" class="logo-img"> 
+      <img src="imagenes/logo.png" class="logo-img" alt="Logo de la página"> 
       <h2 class="titulo-footer">PROGRAMACION<br>E<br>HISTORIA</h2> 
-    </div> 
+    </div>
     <p class="texto-footer">Sitio con fines educativos - Creado por M.Victoria Lopez</p> 
 </footer> 
 <script src="./script.js"></script> 
